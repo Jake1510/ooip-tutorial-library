@@ -20,12 +20,12 @@ Each example is built to be:
 
 ## 📚 Topics Covered
 
-| Category         | Patterns / Concepts Explored                   |
-|------------------|------------------------------------------------|
-| Design Patterns  | Singleton, Command, Strategy, State Machine    |
-| OOP Principles   | Abstraction, Encapsulation, Inheritance        |
-| Project Design   | Layering, Modularisation, Testability          |
-| CODESYS Specific | FBs, POUs, Libraries, Persistent Variables     |
+| Category         | Patterns / Concepts Explored                                 |
+|------------------|--------------------------------------------------------------|
+| Design Patterns  | Singleton, Command, Strategy, State Machine, DI              |
+| OOP Principles   | Abstraction, Encapsulation, Inheritance                      |
+| Project Design   | Layering, Modularisation, Testability                        |  
+| CODESYS Specific | FBs, POUs, Libraries, Persistent Variables, Pragmas, Scopes  |
 
 > More topics are added regularly!
 

@@ -1,10 +1,14 @@
 site_name: OOIP for Controls and Automation Engineers
 site_description: Object-Oriented Industrial Programming patterns and features for CODESYS
 site_author: Jacob Lawson
+
+extra_css:
+  - private/styles/extra.css
+
 theme:
   name: material
-  logo: assets/profile-image.png
-  favicon: assets/profile-image.png   
+  logo: private/assets/profile-image.png
+  favicon: private/assets/profile-image.png   
   palette:
     primary: indigo
     accent: light blue
@@ -18,10 +22,7 @@ theme:
 nav:
   - Home: index.md
   - Features:
-      - Function Blocks: Features/FunctionBlocks.md
-      - Methods: Features/Methods.md
-      - Properties: Features/Properties.md
-      - Interfaces: Features/Interfaces.md
+      - FunctionBlocks: features/FunctionBlocks.md
   - Patterns:
       - Singleton: Patterns/Singleton.md
       - Command: Patterns/Command.md

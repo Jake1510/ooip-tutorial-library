@@ -1,0 +1,35 @@
+site_name: OOIP with CODESYS
+site_description: Object-Oriented Industrial Programming patterns and features for CODESYS
+site_author: Jacob Lawson
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Features:
+      - Function Blocks: Features/FunctionBlocks.md
+      - Methods: Features/Methods.md
+      - Properties: Features/Properties.md
+      - Interfaces: Features/Interfaces.md
+  - Patterns:
+      - Singleton: Patterns/Singleton.md
+      - Command: Patterns/Command.md
+  - Examples Folder: https://github.com/Jake1510/ooip-codesys/tree/main/examples
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji

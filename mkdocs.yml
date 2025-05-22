@@ -1,8 +1,10 @@
-site_name: OOIP with CODESYS
+site_name: OOIP for Controls and Automation Engineers
 site_description: Object-Oriented Industrial Programming patterns and features for CODESYS
 site_author: Jacob Lawson
 theme:
   name: material
+  logo: assets/profile-image.png
+  favicon: assets/profile-image.png   
   palette:
     primary: indigo
     accent: light blue
@@ -23,7 +25,7 @@ nav:
   - Patterns:
       - Singleton: Patterns/Singleton.md
       - Command: Patterns/Command.md
-  - Examples Folder: https://github.com/Jake1510/ooip-codesys/tree/main/examples
+  - Examples Folder: https://github.com/Jake1510/codesys-ooip-library/tree/main/examples
 
 markdown_extensions:
   - admonition

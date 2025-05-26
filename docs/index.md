@@ -1,24 +1,26 @@
 # OOIP for Controls and Automation Engineers
-Welcome to the Object-Oriented Industrial Programming (OOIP) examples and documentation.
-This project uses the CODESYS IDE to demonstrate the application of object-oriented programming principles in industrial automation projects.
-While this resource is based on CODESYS, it is not officially affiliated with the CODESYS Group.
+Welcome to the Object-Oriented Industrial Programming (OOIP) examples and docs.
+This project showcases how to apply OOP principles like encapsulation, modularity, and design patterns in CODESYS using IEC 61131-3.
 
-It is designed to help control engineers and automation developers apply modern programming practices — such as encapsulation, modularity, and design patterns — using the IEC 61131-3 standard in CODESYS.
+The project has no official affiliation with the CODESYS Group — just a practical guide offering an alternative approach to controls software development.
 
 > ⚙️ Built and maintained by [Jacob Lawson](https://www.linkedin.com/in/jacob-lawson/)
 
 ---
 
-## 🚀 Project Goals
+## Project Goals
 
-- ✅ Provide practical, real-world examples of OOIP principles using CODESYS
-- ✅ Teach design patterns like Singleton and Command in an industrial context
-- ✅ Share best practices and reusability tips for scalable PLC projects
-- ✅ Create a structured and open knowledge base for eduactional and reference purposes
+✅ Provide practical, real-world examples of OOIP principles using CODESYS
+
+✅ Teach design patterns like Singleton and Command in an industrial context
+
+✅ Share best practices and reusability tips for scalable PLC projects
+
+✅ Create a structured and open knowledge base for eduactional and reference purposes
 
 ---
 
-## 🧠 Who This Is For
+## Who This Is For
 
 - Controls engineers transitioning to Structured Text and OO programming
 - Software developers collaborating with PLC/ Controls teams
@@ -26,7 +28,7 @@ It is designed to help control engineers and automation developers apply modern 
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 A basic level of programming and automation knowledge is assumed. 
 
@@ -34,11 +36,33 @@ Examples are built using Codesys v3.5 SP20 Patch 1 so it is recommended that you
 
 ---
 
-## 📚 How to Use This Site
+## How to Use This Site
 
 Start with the [Features](./Features/FunctionBlocks.md) section to learn about individual OO features, then explore [Patterns](./Patterns/Singleton.md) to see how you can start putting them together.
 
 ---
 
-## 📦 Repo Structure
+## Using an example project
+
+All examples are exported in PLCopenXML format.
+
+To import one of the examples:
+
+--> Create a new **blank** project in CODESYS
+
+--> Highlight the very top level in the device tree (project name)
+
+--> Go to the Project drop-down menu
+
+--> Select Import **PLCopenXML...**
+
+![Insert POU](/private/images/Index/Import XML.png)
+
+## Want to contribute?
+
+Contributions are welcome! Feel free to get in touch and discuss how you can contribute your own examples or suggest inprovements to the project.
+
+I have created an examples section where people can share ther projects/ libraries with the controls/automation community. If you have something to add just let me know!
+
+## Repo Structure
 

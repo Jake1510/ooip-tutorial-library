@@ -1,4 +1,4 @@
-# 🧱 Function Blocks
+# Function Blocks
 
 Function blocks are the core building blocks of object-oriented programming in IEC 61131-3. 
 They behave in a similar way to classes in other modern object-oriented programming languages like C# and Python. 
@@ -14,7 +14,7 @@ Function blocks can be used to model components commonly used in industrial auto
 - Temperature Controllers
 - Communication Modules
 
-FUnction blocks allow you to reuse your code in scenarios where you have multiple instances of the same object.
+Function blocks allow you to reuse your code in scenarios where you have multiple instances of the same object.
 
 Each instance of a function block maintains its own internal state.
 
@@ -74,4 +74,4 @@ You can choose to implement your function block using
 
 ## Example
 
-Clone and check out the project in examples folder!
+Clone and check out the project in the examples folder!

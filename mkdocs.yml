@@ -23,6 +23,9 @@ nav:
   - Home: index.md
   - Features:
       - FunctionBlocks: features/FunctionBlocks.md
+      - Methods: features/Methods.md
+      - Properties: features/Properties.md
+      - Interfaces: features/Interfaces.md
   - Patterns:
       - Singleton: Patterns/Singleton.md
       - Command: Patterns/Command.md

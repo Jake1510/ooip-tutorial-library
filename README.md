@@ -12,9 +12,9 @@
 This project provides **clear, modular examples** of how to apply modern software engineering principles to **industrial control systems** using CODESYS.
 
 Each example is built to be:
-- 🔧 Practical — based on real-world usage
-- 🧼 Clean — following good naming, structure, and formatting
-- 🧠 Educational — ideal for learning, teaching, and reference
+- 🔧 Practical --> based on real-world usage
+- 🧼 Clean --> following good naming, structure, and formatting
+- 🧠 Educational --> ideal for learning, teaching, and reference
 
 ---
 

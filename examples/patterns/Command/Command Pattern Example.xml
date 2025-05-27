@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 1" creationDateTime="2025-05-27T21:23:14.9949448" />
+  <contentHeader name="Command Pattern Example.project" modificationDateTime="2025-05-27T21:22:47.7198131">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Device">
+        <resource name="Application">
+          <task name="MainTask" interval="PT0.02S" priority="1">
+            <pouInstance name="PLC_PRG" typeName="">
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+              </documentation>
+            </pouInstance>
+            <addData>
+              <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
+                <TaskSettings KindOfTask="Cyclic" Interval="t#20ms" IntervalUnit="ms" WithinSPSTimeSlicing="true">
+                  <Watchdog Enabled="false" TimeUnit="ms" Sensitivity="1" />
+                </TaskSettings>
+              </data>
+              <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                <ObjectId>2d6f7812-0cfb-4f4d-8d1c-052767c5fc00</ObjectId>
+              </data>
+            </addData>
+          </task>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/interface" handleUnknown="implementation">
+              <Interface name="ICommand" ObjectId="ed7518d8-62a3-446e-81a0-425f0580fb59">
+                <Methods>
+                  <Method name="Execute" ObjectId="7f33d22f-4650-4d1a-8926-b820c29458ee">
+                    <interface />
+                    <addData />
+                  </Method>
+                </Methods>
+                <addData />
+              </Interface>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="PLC_PRG" pouType="program">
+                <interface>
+                  <localVars>
+                    <variable name="Commands">
+                      <type>
+                        <derived name="CommandQueue" />
+                      </type>
+                    </variable>
+                    <variable name="currentCommand">
+                      <type>
+                        <derived name="ICommand" />
+                      </type>
+                    </variable>
+                    <variable name="canExecute">
+                      <type>
+                        <BOOL />
+                      </type>
+                    </variable>
+                    <variable name="isDequeued">
+                      <type>
+                        <BOOL />
+                      </type>
+                    </variable>
+                    <variable name="startPump">
+                      <type>
+                        <derived name="PurgeCommand" />
+                      </type>
+                      <documentation>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> Command objects</xhtml>
+                      </documentation>
+                    </variable>
+                    <variable name="stopPump">
+                      <type>
+                        <derived name="CleanCommand" />
+                      </type>
+                    </variable>
+                  </localVars>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF Commands.IsCommandPending  AND canExecute THEN
+	isDequeued := Commands.Dequeue(ADR(currentCommand));
+END_IF
+	
+IF isDequeued THEN
+	currentCommand.Execute();
+	isDequeued := FALSE;
+END_IF
+
+</xhtml>
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>17434ef2-459e-4026-a6ec-5ceb3ab5e952</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="CommandQueue" pouType="functionBlock">
+                <interface>
+                  <localVars constant="true">
+                    <variable name="MaxSize">
+                      <type>
+                        <BYTE />
+                      </type>
+                      <initialValue>
+                        <simpleValue value="10" />
+                      </initialValue>
+                    </variable>
+                  </localVars>
+                  <localVars>
+                    <variable name="_head">
+                      <type>
+                        <BYTE />
+                      </type>
+                    </variable>
+                    <variable name="_tail">
+                      <type>
+                        <BYTE />
+                      </type>
+                    </variable>
+                    <variable name="_count">
+                      <type>
+                        <BYTE />
+                      </type>
+                    </variable>
+                    <variable name="_commandBuffer">
+                      <type>
+                        <array>
+                          <dimension lower="0" upper="(MaxSize - 1)" />
+                          <baseType>
+                            <derived name="ICommand" />
+                          </baseType>
+                        </array>
+                      </type>
+                    </variable>
+                  </localVars>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">
+</xhtml>
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Dequeue" ObjectId="f19463c8-12dc-49b2-b171-0392a05a782e">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <inputVars>
+                          <variable name="command">
+                            <type>
+                              <pointer>
+                                <baseType>
+                                  <derived name="ICommand" />
+                                </baseType>
+                              </pointer>
+                            </type>
+                          </variable>
+                        </inputVars>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF _count &gt; 0 AND command &gt; 0 THEN
+    command^ := _commandBuffer[_head];
+	_head := (_head + 1) MOD MaxSize;
+    _count := _count - 1;
+	
+	Dequeue := TRUE;
+ELSE
+	Dequeue := FALSE;
+END_IF</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Enqueue" ObjectId="6729ca85-f54c-46f0-ba09-873ec92af5ca">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <inputVars>
+                          <variable name="command">
+                            <type>
+                              <derived name="ICommand" />
+                            </type>
+                          </variable>
+                        </inputVars>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF _count &lt; MaxSize THEN
+    _commandBuffer[_tail] := command;
+    _tail := (_tail + 1) MOD MaxSize;
+    _count := _count + 1;
+	
+    Enqueue := TRUE;
+ELSE
+    Enqueue := FALSE;
+END_IF
+
+</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+                    <Property name="IsCommandPending" ObjectId="3df12f14-048e-496c-89e9-e7ba12f31a15">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                      </interface>
+                      <GetAccessor>
+                        <interface />
+                        <body>
+                          <ST>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IsCommandPending := _count &gt; 0;</xhtml>
+                          </ST>
+                        </body>
+                        <addData />
+                      </GetAccessor>
+                      <addData />
+                    </Property>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>fe45e5ee-6e50-4f6a-b7fd-b4e63ba25934</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="MachineControl" pouType="functionBlock">
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Run" ObjectId="081803ea-436a-4027-80a7-e34413726207">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Stop" ObjectId="4c518f5a-7944-4514-bb6b-33797465abca">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Clean" ObjectId="00cdfba0-204f-4d30-a438-bc6525e356f8">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Purge" ObjectId="c6286350-c393-4aee-b62f-d2af11f0fd8a">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>5b0d42be-e7d3-4235-b443-e9f965e25e01</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="PurgeCommand" pouType="functionBlock">
+                <interface>
+                  <inOutVars>
+                    <variable name="Machine">
+                      <type>
+                        <derived name="MachineControl" />
+                      </type>
+                    </variable>
+                  </inOutVars>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/pouinheritance" handleUnknown="implementation">
+                      <Inheritance>
+                        <Implements>ICommand</Implements>
+                      </Inheritance>
+                    </data>
+                  </addData>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Execute" ObjectId="cf146f9b-c2aa-4bfc-b0a0-03a3b188c571">
+                      <interface />
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+// Perform some checks
+Machine.Run();</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>401df91a-83ba-4e10-a648-a176fc53f72c</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="CleanCommand" pouType="functionBlock">
+                <interface>
+                  <inOutVars>
+                    <variable name="Machine">
+                      <type>
+                        <derived name="MachineControl" />
+                      </type>
+                    </variable>
+                  </inOutVars>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/pouinheritance" handleUnknown="implementation">
+                      <Inheritance>
+                        <Implements>ICommand</Implements>
+                      </Inheritance>
+                    </data>
+                  </addData>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="Execute" ObjectId="e1d7b846-76a8-4d67-abd3-b41759708567">
+                      <interface />
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+// Perform some pre-checks
+Machine.Clean();</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>7650414a-4d26-4c55-9533-a00eda3722ba</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+              <Libraries>
+                <Library Name="#IoStandard" Namespace="IoStandard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="true" DefaultResolution="IoStandard, 3.5.17.0 (System)" />
+                <Library Name="#3SLicense" Namespace="_3S_LICENSE" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" />
+                <Library Name="#CAA Device Diagnosis" Namespace="DED" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="CAA Device Diagnosis, 3.5.20.0 (CAA Technical Workgroup)" />
+                <Library Name="#Standard" Namespace="Standard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Standard, * (System)" />
+                <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
+                <PlaceholderRedirections>
+                  <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
+                </PlaceholderRedirections>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>884d738d-cf38-4777-9d49-a8e1cb4e1c89</ObjectId>
+                  </data>
+                </addData>
+              </Libraries>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <ObjectId>afd13a41-3acb-4fb6-ac28-1bf6cbd20ae8</ObjectId>
+            </data>
+          </addData>
+        </resource>
+        <addData>
+          <data name="Device" handleUnknown="discard">
+            <Device xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+              <DeviceType>
+                <DeviceIdentification>
+                  <Type>4096</Type>
+                  <Id>0000 0001</Id>
+                  <Version>3.5.20.10</Version>
+                </DeviceIdentification>
+                <Connector moduleType="256" interface="Common.PCI" connectorId="0">
+                  <HostParameterSet />
+                </Connector>
+                <Connector moduleType="769" interface="SafetyInterface" connectorId="1">
+                  <HostParameterSet />
+                </Connector>
+                <DeviceParameterSet />
+              </DeviceType>
+            </Device>
+          </data>
+          <data name="configurations" handleUnknown="discard">
+            <configurations />
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>b2a5796d-4514-44b6-bf37-f7ec8840b5d0</ObjectId>
+          </data>
+        </addData>
+      </configuration>
+    </configurations>
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="Device" ObjectId="b2a5796d-4514-44b6-bf37-f7ec8840b5d0">
+          <Object Name="Application" ObjectId="afd13a41-3acb-4fb6-ac28-1bf6cbd20ae8">
+            <Object Name="Library Manager" ObjectId="884d738d-cf38-4777-9d49-a8e1cb4e1c89" />
+            <Object Name="PLC_PRG" ObjectId="17434ef2-459e-4026-a6ec-5ceb3ab5e952" />
+            <Object Name="MainTask" ObjectId="2d6f7812-0cfb-4f4d-8d1c-052767c5fc00" />
+            <Folder Name="Commands">
+              <Object Name="ICommand" ObjectId="ed7518d8-62a3-446e-81a0-425f0580fb59">
+                <Object Name="Execute" ObjectId="7f33d22f-4650-4d1a-8926-b820c29458ee" />
+              </Object>
+              <Object Name="CommandQueue" ObjectId="fe45e5ee-6e50-4f6a-b7fd-b4e63ba25934">
+                <Object Name="Dequeue" ObjectId="f19463c8-12dc-49b2-b171-0392a05a782e" />
+                <Object Name="Enqueue" ObjectId="6729ca85-f54c-46f0-ba09-873ec92af5ca" />
+                <Object Name="IsCommandPending" ObjectId="3df12f14-048e-496c-89e9-e7ba12f31a15" />
+              </Object>
+            </Folder>
+            <Folder Name="Machine">
+              <Object Name="MachineControl" ObjectId="5b0d42be-e7d3-4235-b443-e9f965e25e01">
+                <Object Name="Run" ObjectId="081803ea-436a-4027-80a7-e34413726207" />
+                <Object Name="Stop" ObjectId="4c518f5a-7944-4514-bb6b-33797465abca" />
+                <Object Name="Clean" ObjectId="00cdfba0-204f-4d30-a438-bc6525e356f8" />
+                <Object Name="Purge" ObjectId="c6286350-c393-4aee-b62f-d2af11f0fd8a" />
+              </Object>
+              <Object Name="PurgeCommand" ObjectId="401df91a-83ba-4e10-a648-a176fc53f72c">
+                <Object Name="Execute" ObjectId="cf146f9b-c2aa-4bfc-b0a0-03a3b188c571" />
+              </Object>
+              <Object Name="CleanCommand" ObjectId="7650414a-4d26-4c55-9533-a00eda3722ba">
+                <Object Name="Execute" ObjectId="e1d7b846-76a8-4d67-abd3-b41759708567" />
+              </Object>
+            </Folder>
+          </Object>
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

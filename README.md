@@ -1,4 +1,4 @@
-# 🧠 OOIP using CODESYS – Patterns, Practices and Features
+# OOIP  – Patterns, Practices and Features
 
 > A curated library of object-oriented programming patterns, techniques, and features for industrial automation using CODESYS.
 
@@ -7,14 +7,14 @@
 
 ---
 
-## 🔍 What is This?
+## About this repository
 
-This project provides **clear, modular examples** of how to apply modern software engineering principles to **industrial control systems** using CODESYS.
+This repo provides **clear, modular examples** of how to apply modern software engineering principles to **industrial control systems** using CODESYS.
 
 Each example is built to be:
-- 🔧 Practical --> based on real-world usage
-- 🧼 Clean --> following good naming, structure, and formatting
-- 🧠 Educational --> ideal for learning, teaching, and reference
+- Practical --> based on real-world usage
+- Clean --> following good naming, structure, and formatting
+- Educational --> ideal for learning, teaching, and reference
 
 ---
 
@@ -22,7 +22,7 @@ Each example is built to be:
 
 ---
 
-## 🛠️ How to Use This Repository
+## How to Use This Repository
 
 ```bash
 git clone https://github.com/your-username/ooip-codesys-patterns.git

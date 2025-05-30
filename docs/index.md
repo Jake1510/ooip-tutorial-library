@@ -1,8 +1,8 @@
 # OOIP for Controls and Automation Engineers
-Welcome to the Object-Oriented Industrial Programming (OOIP) examples and docs.
-This project showcases how to apply OOP principles like encapsulation, modularity, and design patterns in CODESYS using IEC 61131-3.
+Welcome to **Object-Oriented Industrial Programming (OOIP)** examples and docs.
+This project showcases how to apply OOP principles and design patterns in CODESYS using IEC 61131-3 languages (primarily structured text).
 
-The project has no official affiliation with the CODESYS Group — just a practical guide offering an alternative approach to controls software development.
+*Note: This project has no official affiliation with the CODESYS Group — just a practical guide offering an alternative approach to controls software development.*
 
 > ⚙️ Built and maintained by [Jacob Lawson](https://www.linkedin.com/in/jacob-lawson/)
 
@@ -10,11 +10,11 @@ The project has no official affiliation with the CODESYS Group — just a practi
 
 ## Project Goals
 
-✅ Provide practical, real-world examples of OOIP principles using CODESYS
+✅ Provide practical examples of OOIP principles using CODESYS
 
-✅ Teach design patterns like Singleton and Command in an industrial context
+✅ Demonstrate sclable design patterns for industrial controls projects
 
-✅ Share best practices and reusability tips for scalable PLC projects
+✅ Share best practices and reusability tips for PLC projects
 
 ✅ Create a structured and open knowledge base for eduactional and reference purposes
 
@@ -38,7 +38,7 @@ Examples are built using Codesys v3.5 SP20 Patch 1 so it is recommended that you
 
 ## How to Use This Site
 
-Start with the [Features](./Features/FunctionBlocks.md) section to learn about individual OO features, then explore [Patterns](./Patterns/Singleton.md) to see how you can start putting them together.
+Start with the [Features](./features/FunctionBlocks.md) section to learn about individual OO features, then explore [Patterns](./patterns/Command.md) to see how you can start putting them together!
 
 ---
 

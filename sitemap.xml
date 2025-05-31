@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/features/FunctionBlocks/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/features/Interfaces/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/features/Methods/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/features/Properties/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/patterns/Command/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/patterns/DependencyInjection/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://Jake1510.github.io/ooip-tutorial-library/patterns/StateMachine/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
 </urlset>

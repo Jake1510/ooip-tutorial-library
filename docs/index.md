@@ -40,7 +40,7 @@ Examples are built using Codesys v3.5 SP20 Patch 1 so it is recommended that you
 
 ## How to Use This Site
 
-Start with the [Features](./features/FunctionBlocks.md) section to learn about individual OO features, then explore [Patterns](./patterns/Command.md) to see how you can start putting them together!
+Start with the [Features](docs/features/FunctionBlocks.md) section to learn about individual OO features, then explore [Patterns](docs/patterns/Command.md) to see how you can start putting them together!
 
 ---
 
@@ -58,7 +58,7 @@ To import one of the examples:
 
 --> Select Import **PLCopenXML...**
 
-![Insert POU](/private/images/Index/Import XML.png){ width=400 }
+![Insert POU](docs/private/images/Index/Import XML.png){ width=400 }
 
 ## Want to contribute?
 

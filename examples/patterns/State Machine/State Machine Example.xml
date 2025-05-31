@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 1" creationDateTime="2025-05-31T21:59:47.386968" />
+  <contentHeader name="State Machine Example.project" modificationDateTime="2025-05-31T21:59:31.9410502">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Device">
+        <resource name="Application">
+          <task name="MainTask" interval="PT0.02S" priority="1">
+            <pouInstance name="Main" typeName="">
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+              </documentation>
+            </pouInstance>
+            <addData>
+              <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
+                <TaskSettings KindOfTask="Cyclic" Interval="t#20ms" IntervalUnit="ms" WithinSPSTimeSlicing="true">
+                  <Watchdog Enabled="false" TimeUnit="ms" Sensitivity="1" />
+                </TaskSettings>
+              </data>
+              <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                <ObjectId>2448a6f9-d419-4afc-a00f-d2a0ca824cdc</ObjectId>
+              </data>
+            </addData>
+          </task>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="Main" pouType="program">
+                <interface>
+                  <localVars>
+                    <variable name="scanCount">
+                      <type>
+                        <INT />
+                      </type>
+                    </variable>
+                    <variable name="StateHandler">
+                      <type>
+                        <derived name="StateMachineHandler" />
+                      </type>
+                    </variable>
+                    <variable name="state">
+                      <type>
+                        <derived name="Implicit_Enum__Main__state" />
+                      </type>
+                      <addData>
+                        <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                          <Attributes>
+                            <Attribute Name="implicit_enum_type" Value="" />
+                          </Attributes>
+                        </data>
+                      </addData>
+                    </variable>
+                  </localVars>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                      <Attributes>
+                        <Attribute Name="contains_implicit_enum" />
+                      </Attributes>
+                    </data>
+                  </addData>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">
+state := StateHandler.CurrentState;
+
+CASE StateHandler.CurrentState OF
+	
+	Init: HandleInitState();
+	
+	Run: HandleRunState();
+	
+	Stop: HandleStopState();
+	
+	Error: HandleErrorState();
+	
+END_CASE
+
+scanCount := scanCount+1;
+
+</xhtml>
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="HandleInitState" ObjectId="264ca3ea-f581-443a-810f-ae5eafa0a110">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF scanCount &gt;= 200 THEN
+	scanCount := 0;
+	StateHandler.UpdateState(Run);
+END_IF</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="HandleRunState" ObjectId="ca815ece-2481-4685-9abd-a74baa980179">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF scanCount &gt;= 200 THEN
+	scanCount := 0;
+	StateHandler.UpdateState(Stop);
+END_IF</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="HandleStopState" ObjectId="a8d33f44-3538-4a3a-8d71-276021e4e3b9">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF scanCount &gt;= 200 THEN
+	scanCount := 0;
+	StateHandler.UpdateState(Init);
+END_IF</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="HandleErrorState" ObjectId="a673ab54-d258-4a65-aaa2-19b063366665">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>d06cd755-95fd-4a39-9514-cde8f00280b6</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="StateMachineHandler" pouType="functionBlock">
+                <interface>
+                  <localVars>
+                    <variable name="_currentState">
+                      <type>
+                        <INT />
+                      </type>
+                    </variable>
+                    <variable name="_lastState">
+                      <type>
+                        <INT />
+                      </type>
+                    </variable>
+                  </localVars>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="UpdateState" ObjectId="33d907f6-430c-4292-b7ff-c6bf1019e0f3">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <inputVars>
+                          <variable name="requestedState">
+                            <type>
+                              <INT />
+                            </type>
+                          </variable>
+                        </inputVars>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
+IF requestedState &lt;&gt; _currentState THEN
+	_lastState := _currentState;
+	_currentState := requestedState;
+END_IF</xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+                    <Property name="CurrentState" ObjectId="e78bf441-495c-4018-9e3d-8c47f892143f">
+                      <interface>
+                        <returnType>
+                          <INT />
+                        </returnType>
+                      </interface>
+                      <GetAccessor>
+                        <interface />
+                        <body>
+                          <ST>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml">
+CurrentState := _currentState;</xhtml>
+                          </ST>
+                        </body>
+                        <addData />
+                      </GetAccessor>
+                      <addData />
+                    </Property>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+                    <Property name="LastState" ObjectId="9c751bdf-e0a9-4e89-b4d0-890d93232441">
+                      <interface>
+                        <returnType>
+                          <INT />
+                        </returnType>
+                      </interface>
+                      <GetAccessor>
+                        <interface />
+                        <body>
+                          <ST>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml">
+LastState := _lastState;</xhtml>
+                          </ST>
+                        </body>
+                        <addData />
+                      </GetAccessor>
+                      <addData />
+                    </Property>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>c770796c-0d40-42b1-949a-e11ae4b88d20</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+              <Libraries>
+                <Library Name="#IoStandard" Namespace="IoStandard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="true" DefaultResolution="IoStandard, 3.5.17.0 (System)" />
+                <Library Name="#3SLicense" Namespace="_3S_LICENSE" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" />
+                <Library Name="#CAA Device Diagnosis" Namespace="DED" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="CAA Device Diagnosis, 3.5.20.0 (CAA Technical Workgroup)" />
+                <Library Name="#Standard" Namespace="Standard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Standard, * (System)" />
+                <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
+                <PlaceholderRedirections>
+                  <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
+                </PlaceholderRedirections>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>a448f3ef-ec03-45d7-b6d8-ecdb744e16e4</ObjectId>
+                  </data>
+                </addData>
+              </Libraries>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <ObjectId>bc37e0b7-97d0-4f97-8fbb-2621dbc6c60b</ObjectId>
+            </data>
+          </addData>
+        </resource>
+        <addData>
+          <data name="Device" handleUnknown="discard">
+            <Device xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+              <DeviceType>
+                <DeviceIdentification>
+                  <Type>4097</Type>
+                  <Id>0000 000a</Id>
+                  <Version>3.5.20.10</Version>
+                </DeviceIdentification>
+                <Connector moduleType="256" interface="Common.PCI" connectorId="0">
+                  <HostParameterSet />
+                </Connector>
+                <Connector moduleType="769" interface="SafetyInterface" connectorId="1">
+                  <HostParameterSet />
+                </Connector>
+                <DeviceParameterSet />
+              </DeviceType>
+            </Device>
+          </data>
+          <data name="configurations" handleUnknown="discard">
+            <configurations />
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>4e6dbceb-98e3-49d0-8226-3ddced04f505</ObjectId>
+          </data>
+        </addData>
+      </configuration>
+    </configurations>
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="Device" ObjectId="4e6dbceb-98e3-49d0-8226-3ddced04f505">
+          <Object Name="Application" ObjectId="bc37e0b7-97d0-4f97-8fbb-2621dbc6c60b">
+            <Object Name="Library Manager" ObjectId="a448f3ef-ec03-45d7-b6d8-ecdb744e16e4" />
+            <Object Name="Main" ObjectId="d06cd755-95fd-4a39-9514-cde8f00280b6">
+              <Folder Name="State Handling">
+                <Object Name="HandleInitState" ObjectId="264ca3ea-f581-443a-810f-ae5eafa0a110" />
+                <Object Name="HandleRunState" ObjectId="ca815ece-2481-4685-9abd-a74baa980179" />
+                <Object Name="HandleStopState" ObjectId="a8d33f44-3538-4a3a-8d71-276021e4e3b9" />
+                <Object Name="HandleErrorState" ObjectId="a673ab54-d258-4a65-aaa2-19b063366665" />
+              </Folder>
+            </Object>
+            <Object Name="MainTask" ObjectId="2448a6f9-d419-4afc-a00f-d2a0ca824cdc" />
+            <Object Name="StateMachineHandler" ObjectId="c770796c-0d40-42b1-949a-e11ae4b88d20">
+              <Object Name="UpdateState" ObjectId="33d907f6-430c-4292-b7ff-c6bf1019e0f3" />
+              <Object Name="CurrentState" ObjectId="e78bf441-495c-4018-9e3d-8c47f892143f" />
+              <Object Name="LastState" ObjectId="9c751bdf-e0a9-4e89-b4d0-890d93232441" />
+            </Object>
+          </Object>
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

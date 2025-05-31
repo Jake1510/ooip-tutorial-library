@@ -29,7 +29,7 @@ To add a method to your function block:
 
 --> Choose POU...
 
-![Insert POU](/private/images/Methods/add-method.png){ width=550 }
+![Insert POU](docs/private/images/Methods/add-method.png){ width=550 }
 
 
 ### Configuring a method
@@ -55,12 +55,12 @@ Just like with Function Blocks, you can assign an access specifier to control ho
 Access specifiers give us control over how the method can be viewed and interacted with from outside the function block.
 
 
-![Insert POU](/private/images/Methods/access-specifier.png){ width=300 }
+![Insert POU](docs/private/images/Methods/access-specifier.png){ width=300 }
 
 
 Here’s a screenshot from the example project showing a method being called from another POU. You can see how the return value (a BOOL in this case) is captured after the method completes.
 
-![Insert POU](/private/images/Methods/get-return.png){ width=650 }
+![Insert POU](docs/private/images/Methods/get-return.png){ width=650 }
 
 
 ## Example

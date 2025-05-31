@@ -2,6 +2,8 @@ site_name: OOIP for Controls and Automation Engineers
 site_description: Object-Oriented Industrial Programming patterns and features for CODESYS
 site_author: Jacob Lawson
 
+site_url: https://Jake1510.github.io/ooip-tutorial-library/
+
 extra_css:
   - private/styles/extra.css
 

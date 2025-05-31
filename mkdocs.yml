@@ -8,30 +8,45 @@ extra_css:
 theme:
   name: material
   logo: private/assets/profile-image.png
-  favicon: private/assets/profile-image.png   
+  favicon: private/assets/profile-image.png
   palette:
-    primary: indigo
-    accent: light blue
+    - scheme: slate
+      primary: deep purple
+      accent: light blue
+      toggle:
+        icon: material/white-balance-sunny
+        name: Switch to light mode
+
+    - scheme: default
+      primary: deep purple
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  font:
+    text: Roboto
+    code: Fira Code
   features:
     - navigation.tabs
     - navigation.top
     - search.highlight
     - search.share
-    - content.code.copy
 
 nav:
   - Home: index.md
   - Features:
-      - FunctionBlocks: features/FunctionBlocks.md
+      - Function Blocks: features/FunctionBlocks.md
       - Methods: features/Methods.md
       - Properties: features/Properties.md
       - Interfaces: features/Interfaces.md
   - Patterns:
-      - Singleton: Patterns/Singleton.md
-      - Command: Patterns/Command.md
+      - State Machine: patterns/StateMachine.md
+      - Dependency Injection: patterns/DependencyInjection.md
+      - Command: patterns/Command.md
   - Examples Folder: https://github.com/Jake1510/codesys-ooip-library/tree/main/examples
 
 markdown_extensions:
+  - attr_list
   - admonition
   - codehilite
   - toc:

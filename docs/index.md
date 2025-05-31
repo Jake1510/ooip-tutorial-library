@@ -1,6 +1,8 @@
 # OOIP for Controls and Automation Engineers
 Welcome to **Object-Oriented Industrial Programming (OOIP)** examples and docs.
-This project showcases how to apply OOP principles and design patterns in CODESYS using IEC 61131-3 languages (primarily structured text).
+
+The repository was origionally created to store, and make available, all of the PLC programming examples posted via my [LinkedIn](https://www.linkedin.com/in/jacob-lawson/) account. 
+It demonstrates how to apply OOP principles and design patterns in CODESYS using IEC 61131-3 languages (primarily structured text).
 
 *Note: This project has no official affiliation with the CODESYS Group — just a practical guide offering an alternative approach to controls software development.*
 
@@ -56,7 +58,7 @@ To import one of the examples:
 
 --> Select Import **PLCopenXML...**
 
-![Insert POU](/private/images/Index/Import XML.png)
+![Insert POU](/private/images/Index/Import XML.png){ width=400 }
 
 ## Want to contribute?
 

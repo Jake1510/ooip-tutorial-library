@@ -29,7 +29,7 @@ To add a property to your function block:
 
 --> Choose Property
 
-![Insert POU](/private/images/Properties/add-property.png)
+![Insert POU](/private/images/Properties/add-property.png){ width=500 }
 
 
 ### Configuring a property
@@ -53,14 +53,14 @@ Just like with Function Blocks and Methods, you can assign an access specifier t
 Access specifiers give us control over how the property can be viewed and interacted with from outside the function block.
 
 
-![Insert POU](/private/images/Properties/configure.png)
+![Insert POU](/private/images/Properties/configure.png){ width=300 }
 
 Access to a property can also be restricted by **removing the Get or Set Methods**. For example, removing the Set method completely will ensure that the property is exposed as READ-ONLY to exerything outside of the function block.
 
 
 Here’s a screenshot from the example project showing a property being accessed via its Get and Set methods. You can see how the return value (a BOOL in this case) is captured after the method completes.
 
-![Insert POU](/private/images/Properties/using-properties.png)
+![Insert POU](/private/images/Properties/using-properties.png){ width=650 }
 
 
 ## Example

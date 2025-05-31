@@ -42,7 +42,7 @@ To add a function block to your project:
 
 --> POU...
 
-![Insert POU](/private/images/FunctionBlocks/add-pou.png)
+![Insert POU](/private/images/FunctionBlocks/add-pou.png){ width=400 }
 
 
 ### Configuring a function block
@@ -67,7 +67,7 @@ The **access specifier** dictates how visible your function block will be to the
 *INTERNAL* can be useful for library development and restriciting which function blocks are exposed to the rest of the project.
 
 
-![Insert POU](/private/images/FunctionBlocks/configure.png)
+![Insert POU](/private/images/FunctionBlocks/configure.png){ width=300 }
 
 You can choose to implement your function block using 
 

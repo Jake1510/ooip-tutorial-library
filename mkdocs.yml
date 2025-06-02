@@ -4,7 +4,6 @@ site_author: Jacob Lawson
 
 site_url: https://jake1510.github.io/ooip-tutorial-library/
 use_directory_urls: true
-docs_dir: docs
 
 extra_css:
   - private/styles/extra.css

@@ -903,20 +903,20 @@ You could improve this by adding additional functionality such as logging or val
 <p>--&gt; Add a function block called StateMachineHandler (or similar)</p>
 <p>--&gt; Create two readonly properties (delete Set methods) - CurrentState and LastState</p>
 <p>--&gt; Create two local variables _currentState and _lastState (exposed via our properties)</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/private/images/StateMachine/state-handler-properties.png" width="400" /></p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/StateMachine/state-handler-properties.png" width="400" /></p>
 <h3 id="add-a-method-to-update-state">Add a method to update state<a class="headerlink" href="#add-a-method-to-update-state" title="Permanent link">&para;</a></h3>
 <p>Now we add a method that allows us to request a new state.</p>
 <p>We check that we are not already in the requested state.</p>
 <p>If we aren't, we store the current state in _lastState and then update our _currentState.</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/private/images/StateMachine/update-state.png" width="400" /></p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/StateMachine/update-state.png" width="400" /></p>
 <h3 id="add-a-case-statement">Add a case statement<a class="headerlink" href="#add-a-case-statement" title="Permanent link">&para;</a></h3>
 <p>Now we need a case statement to isolate each of our different states.</p>
 <p>Here we are using an <strong>Implicitly</strong> defined enum for state values and because the underlying value for each of the states is <strong>INT</strong>, we can easily pass the required state into our UpdateState() method.</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/private/images/StateMachine/case-statement.png" width="400" /></p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/StateMachine/case-statement.png" width="400" /></p>
 <h3 id="optional-create-state-handler-methods">Optional - Create state handler methods<a class="headerlink" href="#optional-create-state-handler-methods" title="Permanent link">&para;</a></h3>
 <p>I also like to create private handler methods for each state. This keeps the case steatement short and easy to read.</p>
 <p>The methods here are private because we don't want them to be called from outside this POU.</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/private/images/StateMachine/handle-methods.png" width="350" /></p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/StateMachine/handle-methods.png" width="350" /></p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Clone and check out the project in examples folder!</p>
 

@@ -65,9 +65,10 @@ To import one of the examples:
 
 ## Want to contribute?
 
-Contributions are welcome! Feel free to get in touch and discuss how you can contribute your own examples or suggest inprovements to the project.
+Contributions are welcome! (soon) Feel free to get in touch and discuss how you can contribute your own examples or suggest inprovements to the project.
 
-I have created an examples section where people can share ther projects/ libraries with the controls/automation community. If you have something to add just let me know!
+I'm hoping to create an examples section where people can share ther projects/ libraries with the rest of the controls/automation community. 
+If you have something you'd like to add just let me know!
 
 ## Repo Structure
 

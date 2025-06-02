@@ -35,10 +35,10 @@ State Handler: Code that runs logic based on the current state.
 ### Create a State Machine Handler
 
 First create a function block that encapsulates the logic for managing states and transitions.
-This basic example handles the updating of the current state whilst automatically maintaining the previous state.
-You could improve this by adding additional functionality such as logging or validation.
+This basic example handles updating the current state whilst also maintaining a record of the previous state.
+You can easily improve this by adding additional functionality such as logging or built in validation.
 
---> Add a function block called StateMachineHandler (or similar)
+--> Add a function block called StateMachineHandler (or whatever you prefer)
 
 --> Create two readonly properties (delete Set methods) - CurrentState and LastState
 

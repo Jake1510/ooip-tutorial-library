@@ -10,13 +10,13 @@ Interfaces are ideal when you want to define common behaviour across different t
 
 Use interfaces to:
 
-Decouple logic from specific implementations
+- Decouple logic from specific implementations
 
-Enable polymorphism (e.g. multiple FBs implementing the same interface)
+- Enable polymorphism (e.g. multiple FBs implementing the same interface)
 
-Simplify unit testing via mocking/stubbing
+- Simplify unit testing via mocking/stubbing
 
-Simplify scaling and the addition of new components/ variations
+- Simplify scaling and the addition of new components/ variations
 
 For example, if you have different motor variations, they could all implement a common IMotor interface with methods like **Start()**, **Stop()**, and a property like **IsRunning**.
 

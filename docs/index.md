@@ -60,7 +60,7 @@ To import one of the examples:
 
 --> Select Import **PLCopenXML...**
 
-![Insert POU](site/private/images/Index/Import XML.png){ width=400 }
+![Insert POU](/private/images/Index/Import XML.png){ width=400 }
 
 ## Want to contribute?
 

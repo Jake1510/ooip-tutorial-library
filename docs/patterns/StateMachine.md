@@ -44,7 +44,7 @@ You could improve this by adding additional functionality such as logging or val
 
 --> Create two local variables _currentState and _lastState (exposed via our properties)
 
-![Insert POU](/ooip-tutorial-library/private/private/images/StateMachine/state-handler-properties.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/images/StateMachine/state-handler-properties.png){ width=400 }
 
 
 ### Add a method to update state
@@ -55,7 +55,7 @@ We check that we are not already in the requested state.
 
 If we aren't, we store the current state in _lastState and then update our _currentState.
 
-![Insert POU](/ooip-tutorial-library/private/private/images/StateMachine/update-state.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/images/StateMachine/update-state.png){ width=400 }
 
 ### Add a case statement
 
@@ -63,7 +63,7 @@ Now we need a case statement to isolate each of our different states.
 
 Here we are using an **Implicitly** defined enum for state values and because the underlying value for each of the states is **INT**, we can easily pass the required state into our UpdateState() method.
 
-![Insert POU](/ooip-tutorial-library/private/private/images/StateMachine/case-statement.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/images/StateMachine/case-statement.png){ width=400 }
 
 ### Optional - Create state handler methods
 
@@ -71,7 +71,7 @@ I also like to create private handler methods for each state. This keeps the cas
 
 The methods here are private because we don't want them to be called from outside this POU.
 
-![Insert POU](/ooip-tutorial-library/private/private/images/StateMachine/handle-methods.png){ width=350 }
+![Insert POU](/ooip-tutorial-library/private/images/StateMachine/handle-methods.png){ width=350 }
 
 ## Example
 

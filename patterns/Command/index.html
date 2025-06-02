@@ -841,15 +841,15 @@ Instead of hardcoding the sequence or relying on tightly-coupled logic, we can:<
 <h3 id="1-add-an-interface">1. Add an Interface<a class="headerlink" href="#1-add-an-interface" title="Permanent link">&para;</a></h3>
 <p>First we need to create an interface for our command objects. You can refer back to the <strong>Interfaces</strong> example
 if needed. Our interface needs to define an <strong>Execute()</strong> method as a minimum. We will call the interface <strong>ICommand</strong>.</p>
-<p><img alt="Insert POU" src="/private/images/Command/tree.png" width="300" /></p>
+<p><img alt="Insert POU" src="docs/private/images/Command/tree.png" width="300" /></p>
 <h3 id="2-create-command-function-blocks">2. Create Command Function Blocks<a class="headerlink" href="#2-create-command-function-blocks" title="Permanent link">&para;</a></h3>
 <p>Next we need a function blocks that encapsulate the different commands that need to be queued. You can refer back to the <strong>Function Blocks</strong> example if needed.
 All of our Command Function Blocks must implement the ICommand interface and accept a reference to whichever FB we need to act on. </p>
-<p><img alt="Insert POU" src="/private/images/command/Command-fb.png" width="500" /></p>
+<p><img alt="Insert POU" src="docs/private/images/command/Command-fb.png" width="500" /></p>
 <h3 id="3-create-a-queue">3. Create a Queue<a class="headerlink" href="#3-create-a-queue" title="Permanent link">&para;</a></h3>
 <p>Finally, we need a queue that accepts any objects implementing the ICommand interface. By using a common interface we are able to 
 queue different command objects together.</p>
-<p><img alt="Insert POU" src="/private/images/Command/queue.png" width="650" /></p>
+<p><img alt="Insert POU" src="docs/private/images/Command/queue.png" width="650" /></p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Clone and check out the project in examples folder!</p>
 

@@ -42,7 +42,7 @@ The Codesys IDE is available for free at the [Codesys Store](https://store.codes
 
 ## How to Use This Site
 
-Start with the [Features](../ooip-tutorial-library/features/FunctionBlocks.md) section to learn about individual OO features, then explore [Patterns](../ooip-tutorial-library/patterns/Command.md) to see how you can start putting them into practice.
+Start with the [Features](../ooip-tutorial-library/features/FunctionBlocks/) section to learn about individual OO features, then explore [Patterns](../ooip-tutorial-library/patterns/Command/) to see how you can start putting them into practice.
 
 ---
 

@@ -898,9 +898,9 @@
 <h2 id="how-to">How-To<a class="headerlink" href="#how-to" title="Permanent link">&para;</a></h2>
 <h3 id="create-a-state-machine-handler">Create a State Machine Handler<a class="headerlink" href="#create-a-state-machine-handler" title="Permanent link">&para;</a></h3>
 <p>First create a function block that encapsulates the logic for managing states and transitions.
-This basic example handles the updating of the current state whilst automatically maintaining the previous state.
-You could improve this by adding additional functionality such as logging or validation.</p>
-<p>--&gt; Add a function block called StateMachineHandler (or similar)</p>
+This basic example handles updating the current state whilst also maintaining a record of the previous state.
+You can easily improve this by adding additional functionality such as logging or built in validation.</p>
+<p>--&gt; Add a function block called StateMachineHandler (or whatever you prefer)</p>
 <p>--&gt; Create two readonly properties (delete Set methods) - CurrentState and LastState</p>
 <p>--&gt; Create two local variables _currentState and _lastState (exposed via our properties)</p>
 <p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/StateMachine/state-handler-properties.png" width="400" /></p>

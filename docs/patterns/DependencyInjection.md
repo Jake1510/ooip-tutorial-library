@@ -41,7 +41,7 @@ To add an interface to your project:
 --> Select Interface
 
 
-![Insert POU](docs/private/images/Interfaces/add-interface.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/private/images/Interfaces/add-interface.png){ width=400 }
 
 
 ### Defining an interface
@@ -58,7 +58,7 @@ To implement an interface in a Function Block you use the keyword IMPLEMENTS fol
 
 You can let the CODESYS IDE implement add the interface components by right clicking and selecting **implement interfaces...**
 
-![Insert POU](docs/private/images/Interfaces/implement.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/private/images/Interfaces/implement.png){ width=400 }
 
 ### Tips
 

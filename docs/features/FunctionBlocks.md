@@ -42,7 +42,7 @@ To add a function block to your project:
 
 --> POU...
 
-![Insert POU](/private/images/FunctionBlocks/add-pou.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/private/images/FunctionBlocks/add-pou.png){ width=400 }
 
 
 ### Configuring a function block

@@ -32,21 +32,21 @@ Instead of hardcoding the sequence or relying on tightly-coupled logic, we can:
 First we need to create an interface for our command objects. You can refer back to the **Interfaces** example
 if needed. Our interface needs to define an **Execute()** method as a minimum. We will call the interface **ICommand**.
 
-![Insert POU](docs/private/images/Command/tree.png){ width=300 }
+![Insert POU](/ooip-tutorial-library/private/private/images/Command/tree.png){ width=300 }
 
 ### 2. Create Command Function Blocks
 
 Next we need a function blocks that encapsulate the different commands that need to be queued. You can refer back to the **Function Blocks** example if needed.
 All of our Command Function Blocks must implement the ICommand interface and accept a reference to whichever FB we need to act on. 
 
-![Insert POU](docs/private/images/command/Command-fb.png){ width=500 }
+![Insert POU](/ooip-tutorial-library/private/private/images/command/Command-fb.png){ width=500 }
 
 ### 3. Create a Queue
 
 Finally, we need a queue that accepts any objects implementing the ICommand interface. By using a common interface we are able to 
 queue different command objects together.
 
-![Insert POU](docs/private/images/Command/queue.png){ width=650 }
+![Insert POU](/ooip-tutorial-library/private/private/images/Command/queue.png){ width=650 }
 
 
 ## Example

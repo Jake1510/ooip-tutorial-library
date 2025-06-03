@@ -45,6 +45,8 @@ nav:
       - State Machine: patterns/StateMachine.md
       - Dependency Injection: patterns/DependencyInjection.md
       - Command: patterns/Command.md
+  - Tips:
+    - Guard Clauses: tips/Guard-Clauses.md
   - Examples Folder: https://github.com/Jake1510/codesys-ooip-library/tree/main/examples
 
 markdown_extensions:

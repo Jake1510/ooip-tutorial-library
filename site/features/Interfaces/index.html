@@ -875,10 +875,20 @@
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>Interfaces are ideal when you want to define common behaviour across different types of objects, without enforcing a specific implementation.</p>
 <p>Use interfaces to:</p>
+<ul>
+<li>
 <p>Decouple logic from specific implementations</p>
+</li>
+<li>
 <p>Enable polymorphism (e.g. multiple FBs implementing the same interface)</p>
+</li>
+<li>
 <p>Simplify unit testing via mocking/stubbing</p>
+</li>
+<li>
 <p>Simplify scaling and the addition of new components/ variations</p>
+</li>
+</ul>
 <p>For example, if you have different motor variations, they could all implement a common IMotor interface with methods like <strong>Start()</strong>, <strong>Stop()</strong>, and a property like <strong>IsRunning</strong>.</p>
 <h2 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h2>
 <p>Interface: A named contract that defines methods and/or properties to be implemented.</p>

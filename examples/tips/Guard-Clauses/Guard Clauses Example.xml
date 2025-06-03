@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 1" creationDateTime="2025-06-03T09:33:49.8273024" />
+  <contentHeader name="Guard Clauses Example.project" modificationDateTime="2025-06-03T09:33:32.9902694">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Device">
+        <resource name="Application">
+          <task name="MainTask" interval="PT0.02S" priority="1">
+            <pouInstance name="Main" typeName="">
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+              </documentation>
+            </pouInstance>
+            <addData>
+              <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
+                <TaskSettings KindOfTask="Cyclic" Interval="t#20ms" IntervalUnit="ms" WithinSPSTimeSlicing="true">
+                  <Watchdog Enabled="false" TimeUnit="ms" Sensitivity="1" />
+                </TaskSettings>
+              </data>
+              <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                <ObjectId>48b6a82c-494f-4281-87ef-a330fa3560fa</ObjectId>
+              </data>
+            </addData>
+          </task>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+              <pou name="Main" pouType="program">
+                <interface>
+                  <localVars>
+                    <variable name="ConditionA">
+                      <type>
+                        <BOOL />
+                      </type>
+                    </variable>
+                    <variable name="ConditionB">
+                      <type>
+                        <BOOL />
+                      </type>
+                    </variable>
+                    <variable name="ConditionC">
+                      <type>
+                        <BOOL />
+                      </type>
+                    </variable>
+                  </localVars>
+                </interface>
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">
+// Instead of this --&gt;
+IF ConditionA THEN
+    IF ConditionB THEN
+        IF NOT ConditionC THEN
+            DoSomething();
+        END_IF
+    END_IF
+END_IF
+
+
+//----------------------------------------------------------------------------+
+
+// Try this --&gt;
+IF NOT ConditionA THEN RETURN; END_IF
+IF NOT ConditionB THEN RETURN; END_IF
+IF ConditionC THEN RETURN; END_IF
+
+DoSomething();
+
+
+
+</xhtml>
+                  </ST>
+                </body>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                    <Method name="DoSomething" ObjectId="a79809ea-2712-4124-ad16-1a93bbf7f9dd">
+                      <interface>
+                        <returnType>
+                          <BOOL />
+                        </returnType>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                  </data>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>12d12a65-2e15-4cde-a0ca-4e17414fb0d8</ObjectId>
+                  </data>
+                </addData>
+              </pou>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+              <Libraries>
+                <Library Name="#IoStandard" Namespace="IoStandard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="true" DefaultResolution="IoStandard, 3.5.17.0 (System)" />
+                <Library Name="#3SLicense" Namespace="_3S_LICENSE" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="3SLicense, 0.0.0.0 (3S - Smart Software Solutions GmbH)" ResolverGuid="97c3b452-d9fa-4ac2-9d0c-3d420aa6d95b" />
+                <Library Name="#CAA Device Diagnosis" Namespace="DED" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="CAA Device Diagnosis, 3.5.20.0 (CAA Technical Workgroup)" />
+                <Library Name="#Standard" Namespace="Standard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Standard, * (System)" />
+                <Library Name="#BreakpointLogging" Namespace="BPLog" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="true" LinkAllContent="false" DefaultResolution="Breakpoint Logging Functions, * (3S - Smart Software Solutions GmbH)" />
+                <PlaceholderRedirections>
+                  <PlaceholderRedirection Placeholder="Standard" Redirection="Standard, 3.5.18.0 (System)" />
+                </PlaceholderRedirections>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                    <ObjectId>152075f4-ba5a-4ec9-92f8-7970f20dc9b3</ObjectId>
+                  </data>
+                </addData>
+              </Libraries>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <ObjectId>927b3307-88cb-4b4c-a28f-35ca6f038368</ObjectId>
+            </data>
+          </addData>
+        </resource>
+        <addData>
+          <data name="Device" handleUnknown="discard">
+            <Device xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+              <DeviceType>
+                <DeviceIdentification>
+                  <Type>4096</Type>
+                  <Id>0000 0001</Id>
+                  <Version>3.5.20.10</Version>
+                </DeviceIdentification>
+                <Connector moduleType="256" interface="Common.PCI" connectorId="0">
+                  <HostParameterSet />
+                </Connector>
+                <Connector moduleType="769" interface="SafetyInterface" connectorId="1">
+                  <HostParameterSet />
+                </Connector>
+                <DeviceParameterSet />
+              </DeviceType>
+            </Device>
+          </data>
+          <data name="configurations" handleUnknown="discard">
+            <configurations />
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>a78564ca-315c-4bc5-9509-49b396f68e3f</ObjectId>
+          </data>
+        </addData>
+      </configuration>
+    </configurations>
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="Device" ObjectId="a78564ca-315c-4bc5-9509-49b396f68e3f">
+          <Object Name="Application" ObjectId="927b3307-88cb-4b4c-a28f-35ca6f038368">
+            <Object Name="Library Manager" ObjectId="152075f4-ba5a-4ec9-92f8-7970f20dc9b3" />
+            <Object Name="Main" ObjectId="12d12a65-2e15-4cde-a0ca-4e17414fb0d8">
+              <Object Name="DoSomething" ObjectId="a79809ea-2712-4124-ad16-1a93bbf7f9dd" />
+            </Object>
+            <Object Name="MainTask" ObjectId="48b6a82c-494f-4281-87ef-a330fa3560fa" />
+          </Object>
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

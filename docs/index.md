@@ -48,19 +48,21 @@ Start with the [Features](../ooip-tutorial-library/features/FunctionBlocks/) sec
 
 ## Using an example project
 
-All examples are exported in PLCopenXML format.
+All examples are exported in .export format.
 
 To import one of the examples:
 
---> Create a new **blank** project in CODESYS
+--> Create a new **standard** project in CODESYS
 
---> Highlight the very top level in the device tree (project name)
+--> Highlight the **application** level in the device tree
 
 --> Go to the Project drop-down menu
 
---> Select Import **PLCopenXML...**
+--> Select Import
 
-![Insert POU](../ooip-tutorial-library/private/images/Index/Import-XML.png){ width=300 }
+--> Navigate to the .export file and select the files you want to insert
+
+![Insert POU](../ooip-tutorial-library/private/images/Index/Import.png){ width=300 }
 
 
 ## Want to contribute?

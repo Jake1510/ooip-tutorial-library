@@ -1,0 +1,175 @@
+<ExportFile>
+  <StructuredView Guid="{d9b2b2cc-ea99-4c3b-aa42-1e5c49e65b84}">
+<Single xml:space="preserve" Type="{3daac5e4-660e-42e4-9cea-3711b98bfb63}" Method="IArchivable">
+  <Null Name="Profile" />
+  <List2 Name="EntryList">
+    <Single Type="{6198ad31-4b98-445c-927f-3258a0e82fe3}" Method="IArchivable">
+      <Single Name="IsRoot" Type="bool">True</Single>
+      <Single Name="MetaObject" Type="{81297157-7ec9-45ce-845e-84cab2b88ade}" Method="IArchivable">
+        <Single Name="Guid" Type="System.Guid">12d12a65-2e15-4cde-a0ca-4e17414fb0d8</Single>
+        <Single Name="ParentGuid" Type="System.Guid">927b3307-88cb-4b4c-a28f-35ca6f038368</Single>
+        <Single Name="Name" Type="string">Main</Single>
+        <Dictionary Type="{2c41fa04-1834-41c1-816e-303c7aa2c05b}" Name="Properties" />
+        <Single Name="TypeGuid" Type="System.Guid">6f9dac99-8de1-4efc-8465-68ac443b7d08</Single>
+        <Array Name="EmbeddedTypeGuids" Type="System.Guid">
+          <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
+          <Single Type="System.Guid">3b83b776-fb25-43b8-99f2-3c507c9143fc</Single>
+        </Array>
+        <Single Name="Timestamp" Type="long">638846372892224710</Single>
+      </Single>
+      <Single Name="Object" Type="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" Method="IArchivable">
+        <Single Name="SpecialFunc" Type="{0db3d7bb-cde0-4416-9a7b-ce49a0124323}">None</Single>
+        <Single Name="Implementation" Type="{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Method="IArchivable">
+          <Single Name="TextDocument" Type="{f3878285-8e4f-490b-bb1b-9acbb7eb04db}" Method="IArchivable">
+            <Single Name="TextBlobForSerialisation" Type="string">
+// Instead of this --&gt;
+IF ConditionA THEN
+    IF ConditionB THEN
+        IF NOT ConditionC THEN
+            DoSomething();
+		ELSE
+			LogError('ConditionC was true');
+        END_IF
+	ELSE
+		LogError('ConditionB was false');
+    END_IF
+ELSE
+	LogError('ConditionA was false');
+END_IF
+
+
+//----------------------------------------------------------------------------+
+
+// Try this --&gt;
+IF NOT ConditionA THEN 
+	LogError('ConditionA was false');
+	RETURN; 
+END_IF
+
+IF NOT ConditionB THEN
+	LogError('ConditionB was false');	
+ 	RETURN; 
+END_IF
+
+IF ConditionC THEN
+	LogError('ConditionC was true'); 
+	RETURN; 
+END_IF
+
+DoSomething();
+
+
+
+</Single>
+            <Single Name="LineInfoPersistence" Type="string">12d12a65-2e15-4cde-a0ca-4e17414fb0d8_Impl_LineIds</Single>
+          </Single>
+        </Single>
+        <Single Name="Interface" Type="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Method="IArchivable">
+          <Single Name="TextDocument" Type="{f3878285-8e4f-490b-bb1b-9acbb7eb04db}" Method="IArchivable">
+            <Single Name="TextBlobForSerialisation" Type="string">PROGRAM Main
+VAR
+	ConditionA : BOOL;
+	ConditionB : BOOL;
+	ConditionC : BOOL;
+END_VAR</Single>
+            <Single Name="LineInfoPersistence" Type="string">12d12a65-2e15-4cde-a0ca-4e17414fb0d8_Decl_LineIds</Single>
+          </Single>
+        </Single>
+        <Single Name="UniqueIdGenerator" Type="string">83</Single>
+        <Single Name="POULevel" Type="{8e575c5b-1d37-49c6-941b-5c0ec7874787}">Standard</Single>
+        <List Name="ChildObjectGuids" Type="System.Collections.ArrayList" />
+        <Single Name="AddAttributeSubsequent" Type="bool">False</Single>
+      </Single>
+      <Single Name="ParentSVNodeGuid" Type="System.Guid">927b3307-88cb-4b4c-a28f-35ca6f038368</Single>
+      <Array Name="Path" Type="string">
+        <Single Type="string">Device</Single>
+        <Single Type="string">PLC Logic</Single>
+        <Single Type="string">Application</Single>
+      </Array>
+      <Single Name="Index" Type="int">-1</Single>
+    </Single>
+    <Single Type="{6198ad31-4b98-445c-927f-3258a0e82fe3}" Method="IArchivable">
+      <Single Name="IsRoot" Type="bool">False</Single>
+      <Single Name="MetaObject" Type="{81297157-7ec9-45ce-845e-84cab2b88ade}" Method="IArchivable">
+        <Single Name="Guid" Type="System.Guid">a79809ea-2712-4124-ad16-1a93bbf7f9dd</Single>
+        <Single Name="ParentGuid" Type="System.Guid">12d12a65-2e15-4cde-a0ca-4e17414fb0d8</Single>
+        <Single Name="Name" Type="string">DoSomething</Single>
+        <Dictionary Type="{2c41fa04-1834-41c1-816e-303c7aa2c05b}" Name="Properties" />
+        <Single Name="TypeGuid" Type="System.Guid">f8a58466-d7f6-439f-bbb8-d4600e41d099</Single>
+        <Array Name="EmbeddedTypeGuids" Type="System.Guid">
+          <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
+          <Single Type="System.Guid">3b83b776-fb25-43b8-99f2-3c507c9143fc</Single>
+        </Array>
+        <Single Name="Timestamp" Type="long">638844945245346528</Single>
+      </Single>
+      <Single Name="Object" Type="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" Method="IArchivable">
+        <Single Name="Implementation" Type="{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Method="IArchivable">
+          <Single Name="TextDocument" Type="{f3878285-8e4f-490b-bb1b-9acbb7eb04db}" Method="IArchivable">
+            <Single Name="TextBlobForSerialisation" Type="string"></Single>
+            <Single Name="LineInfoPersistence" Type="string">a79809ea-2712-4124-ad16-1a93bbf7f9dd_Impl_LineIds</Single>
+          </Single>
+        </Single>
+        <Single Name="Interface" Type="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Method="IArchivable">
+          <Single Name="TextDocument" Type="{f3878285-8e4f-490b-bb1b-9acbb7eb04db}" Method="IArchivable">
+            <Single Name="TextBlobForSerialisation" Type="string">METHOD PRIVATE DoSomething : BOOL
+VAR_INPUT
+END_VAR
+</Single>
+            <Single Name="LineInfoPersistence" Type="string">a79809ea-2712-4124-ad16-1a93bbf7f9dd_Decl_LineIds</Single>
+          </Single>
+        </Single>
+      </Single>
+      <Single Name="ParentSVNodeGuid" Type="System.Guid">12d12a65-2e15-4cde-a0ca-4e17414fb0d8</Single>
+      <Array Name="Path" Type="string">
+        <Single Type="string">Device</Single>
+        <Single Type="string">PLC Logic</Single>
+        <Single Type="string">Application</Single>
+        <Single Type="string">Main</Single>
+      </Array>
+      <Single Name="Index" Type="int">-1</Single>
+    </Single>
+    <Single Type="{6198ad31-4b98-445c-927f-3258a0e82fe3}" Method="IArchivable">
+      <Single Name="IsRoot" Type="bool">False</Single>
+      <Single Name="MetaObject" Type="{81297157-7ec9-45ce-845e-84cab2b88ade}" Method="IArchivable">
+        <Single Name="Guid" Type="System.Guid">eee1a3f3-d3f9-4e1a-bcc0-a0cb4dcf518a</Single>
+        <Single Name="ParentGuid" Type="System.Guid">12d12a65-2e15-4cde-a0ca-4e17414fb0d8</Single>
+        <Single Name="Name" Type="string">LogError</Single>
+        <Dictionary Type="{2c41fa04-1834-41c1-816e-303c7aa2c05b}" Name="Properties" />
+        <Single Name="TypeGuid" Type="System.Guid">f8a58466-d7f6-439f-bbb8-d4600e41d099</Single>
+        <Array Name="EmbeddedTypeGuids" Type="System.Guid">
+          <Single Type="System.Guid">a9ed5b7e-75c5-4651-af16-d2c27e98cb94</Single>
+          <Single Type="System.Guid">3b83b776-fb25-43b8-99f2-3c507c9143fc</Single>
+        </Array>
+        <Single Name="Timestamp" Type="long">638846370056095428</Single>
+      </Single>
+      <Single Name="Object" Type="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" Method="IArchivable">
+        <Single Name="Implementation" Type="{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Method="IArchivable">
+          <Single Name="TextDocument" Type="{f3878285-8e4f-490b-bb1b-9acbb7eb04db}" Method="IArchivable">
+            <Single Name="TextBlobForSerialisation" Type="string"></Single>
+            <Single Name="LineInfoPersistence" Type="string">eee1a3f3-d3f9-4e1a-bcc0-a0cb4dcf518a_Impl_LineIds</Single>
+          </Single>
+        </Single>
+        <Single Name="Interface" Type="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Method="IArchivable">
+          <Single Name="TextDocument" Type="{f3878285-8e4f-490b-bb1b-9acbb7eb04db}" Method="IArchivable">
+            <Single Name="TextBlobForSerialisation" Type="string">METHOD PUBLIC LogError
+VAR_INPUT
+	ErrorMessage : STRING;
+END_VAR
+</Single>
+            <Single Name="LineInfoPersistence" Type="string">eee1a3f3-d3f9-4e1a-bcc0-a0cb4dcf518a_Decl_LineIds</Single>
+          </Single>
+        </Single>
+      </Single>
+      <Single Name="ParentSVNodeGuid" Type="System.Guid">12d12a65-2e15-4cde-a0ca-4e17414fb0d8</Single>
+      <Array Name="Path" Type="string">
+        <Single Type="string">Device</Single>
+        <Single Type="string">PLC Logic</Single>
+        <Single Type="string">Application</Single>
+        <Single Type="string">Main</Single>
+      </Array>
+      <Single Name="Index" Type="int">-1</Single>
+    </Single>
+  </List2>
+  <Single Name="ProfileName" Type="string">CODESYS V3.5 SP20 Patch 1</Single>
+</Single>  </StructuredView>
+</ExportFile>

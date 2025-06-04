@@ -6,7 +6,7 @@ It demonstrates how to apply OOP principles and design patterns in CODESYS using
 
 *Note: This project has no official affiliation with the CODESYS Group — just a practical guide offering an alternative approach to controls software development.*
 
-> ⚙️ Built and maintained by [Jacob Lawson](https://www.linkedin.com/in/jacob-lawson/)
+> ⚙️ Built and maintained by [Jacob Lawson](https://www.linkedin.com/in/jacob-lawson-1b3a49151/)
 
 ---
 

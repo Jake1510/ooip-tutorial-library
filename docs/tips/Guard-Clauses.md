@@ -38,11 +38,11 @@ When writing a method or body of logic:
 
 Here we can see some nested conditional logic around the **DoSomething()** method. This is fairly easy to read at this point but, as more conditions are added, it can quickly become difficult to read and maintain.
 
-![Insert POU](/ooip-tutorial-library/private/images/Guard-Clauses/not-this.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/images/Guard-Clauses/nested.png){ width=400 }
 
 By inverting conditions and returning early, we can clean up the code and remove the nesting making it easier to follow.
 
-![Insert POU](/ooip-tutorial-library/private/images/Guard-Clauses/this.png){ width=400 }
+![Insert POU](/ooip-tutorial-library/private/images/Guard-Clauses/flat.png){ width=400 }
 
 ### Tips
 

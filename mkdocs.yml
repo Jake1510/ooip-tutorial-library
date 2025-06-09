@@ -41,6 +41,7 @@ nav:
       - Methods: features/Methods.md
       - Properties: features/Properties.md
       - Interfaces: features/Interfaces.md
+      - Text Lists: features/TextLists.md
   - Patterns:
       - State Machine: patterns/StateMachine.md
       - Dependency Injection: patterns/DependencyInjection.md

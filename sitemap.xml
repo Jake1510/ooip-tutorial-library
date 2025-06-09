@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/features/FunctionBlocks/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/features/Interfaces/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/features/Methods/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/features/Properties/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
+    </url>
+    <url>
+         <loc>https://jake1510.github.io/ooip-tutorial-library/features/TextLists/</loc>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/patterns/Command/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/patterns/DependencyInjection/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/patterns/StateMachine/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://jake1510.github.io/ooip-tutorial-library/tips/Guard-Clauses/</loc>
-         <lastmod>2025-06-04</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
 </urlset>

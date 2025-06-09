@@ -12,13 +12,13 @@
         <meta name="author" content="Jacob Lawson">
       
       
-        <link rel="canonical" href="https://jake1510.github.io/ooip-tutorial-library/features/Methods/">
+        <link rel="canonical" href="https://jake1510.github.io/ooip-tutorial-library/features/TextLists/">
       
       
-        <link rel="prev" href="../FunctionBlocks/">
+        <link rel="prev" href="../Interfaces/">
       
       
-        <link rel="next" href="../Properties/">
+        <link rel="next" href="../../patterns/StateMachine/">
       
       
       <link rel="icon" href="../../private/assets/profile-image.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Methods - OOIP for Controls and Automation Engineers</title>
+        <title>Text Lists - OOIP for Controls and Automation Engineers</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#methods" class="md-skip">
+        <a href="#text-lists" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Methods
+              Text Lists
             
           </span>
         </div>
@@ -438,32 +438,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Methods
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Methods/" class="md-nav__link">
         
   
   
@@ -474,77 +452,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purpose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to" class="md-nav__link">
-    <span class="md-ellipsis">
-      How-To
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How-To">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-method-to-a-function-block" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding a method to a function block
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-a-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring a method
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -600,10 +507,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../TextLists/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Text Lists
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -614,6 +543,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      How-To
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How-To">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-text-list-to-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a text list to your project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Entries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-strings-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing strings in code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -882,18 +891,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-a-method-to-a-function-block" class="md-nav__link">
+  <a href="#adding-a-text-list-to-your-project" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding a method to a function block
+      Adding a text list to your project
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-a-method" class="md-nav__link">
+  <a href="#adding-entries" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring a method
+      Adding Entries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-strings-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing strings in code
     </span>
   </a>
   
@@ -929,47 +947,46 @@
 
 
 
-<h1 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h1>
-<p>Methods are reusable, encapsulated pieces of logic that belong to a Function Block or Class. They're like functions, but scoped to a specific object instance - letting you operate on that FB’s internal state.</p>
-<p>This is a big step toward writing modular, readable, and maintainable code.</p>
+<h1 id="text-lists">Text Lists<a class="headerlink" href="#text-lists" title="Permanent link">&para;</a></h1>
+<p>Text Lists provide a simple way to manage and store strings locally (like error messages or descriptions). Instead of hardcoding text, you can reference a string by its ID which keeps your code clean, maintainable, and sets you up for multi-language support.</p>
 <hr />
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>Methods are useful for:</p>
+<p>Text Lists are useful for:</p>
 <ul>
 <li>
-<p>Hiding internal logic that doesn't need to be exposed outside the Function Block</p>
+<p>Keeping user-visible strings out of logic code</p>
 </li>
 <li>
-<p>Reusing logic to avoid unnecessary repetition</p>
+<p>Making your project multi-language friendly</p>
 </li>
 <li>
-<p>Breaking code into smaller, more readable pieces</p>
+<p>Centralizing text descriptions (e.g., alarm messages, motor errors)</p>
 </li>
 <li>
-<p>Making it easier to test individual parts of your program in isolation</p>
+<p>Saving memory compared to long constant string arrays</p>
 </li>
 </ul>
 <h2 id="how-to">How-To<a class="headerlink" href="#how-to" title="Permanent link">&para;</a></h2>
-<h3 id="adding-a-method-to-a-function-block">Adding a method to a function block<a class="headerlink" href="#adding-a-method-to-a-function-block" title="Permanent link">&para;</a></h3>
-<p>To add a method to your function block:</p>
-<p>--&gt; Right click the function block</p>
-<p>--&gt; Select Add Object </p>
-<p>--&gt; Choose POU...</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/Methods/add-method.png" width="550" /></p>
-<h3 id="configuring-a-method">Configuring a method<a class="headerlink" href="#configuring-a-method" title="Permanent link">&para;</a></h3>
-<p>You’ll see the Add Method dialog.</p>
-<p>Firstly, give your method a clear and meaningful name (or not, your choice...)</p>
-<p>You then have the option to select a return type. If you only want your method to perform an action and not return a value then you can simply leave this blank.</p>
-<p>However, if you do want to return something once your method has finished running then speicfy it here.</p>
-<p>Just like with Function Blocks, you can assign an access specifier to control how the method is exposed:</p>
-<p><strong><em>Public</em></strong> - Makes the Function Block, method, or property accessible from anywhere in the application.</p>
-<p><strong><em>Private</em></strong> - Restricts access to within the same Function Block or class — not visible to external code.</p>
-<p><strong><em>Protected</em></strong> - Accessible only from within the Function Block and its derived types.</p>
-<p><strong><em>Internal</em></strong> - Accessible only within the same library or application scope, but not visible outside it.</p>
-<p>Access specifiers give us control over how the method can be viewed and interacted with from outside the function block.</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/Methods/access-specifier.png" width="300" /></p>
-<p>Here’s a screenshot from the example project showing a method being called from another POU. You can see how the return value (a BOOL in this case) is captured after the method completes.</p>
-<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/Methods/get-return.png" width="650" /></p>
+<h3 id="adding-a-text-list-to-your-project">Adding a text list to your project<a class="headerlink" href="#adding-a-text-list-to-your-project" title="Permanent link">&para;</a></h3>
+<p>To add a property to your function block:</p>
+<p>--&gt; Right-click the Application node</p>
+<p>--&gt; Select Add Object</p>
+<p>--&gt; Choose Text List</p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/TextLists/add-list.png" width="500" /></p>
+<h3 id="adding-entries">Adding Entries<a class="headerlink" href="#adding-entries" title="Permanent link">&para;</a></h3>
+<p>Double-click the text list to open it. Then start adding rows. Each entry has:</p>
+<p>ID - A string used in your code to look up the description</p>
+<p>Default Text - The English (or fallback) version of the message</p>
+<p>Language columns - Add additional languages like de, fr, etc.</p>
+<p>You can see the additional column with the header 'de' providing German translations.</p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/TextLists/text-list.png" width="400" /></p>
+<h3 id="accessing-strings-in-code">Accessing strings in code<a class="headerlink" href="#accessing-strings-in-code" title="Permanent link">&para;</a></h3>
+<p>To simplify text list access I created a GetText function. </p>
+<p>This wraps up the DynamicTextGetText function allowing you to pass a language and a default return value.</p>
+<p>In my motor function block I can get and error descriptions from my text file in any of my configured languages.</p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/TextLists/motor-class.png" width="400" /></p>
+<p>Finally we can call the get method on the ErrorDescription property in MotorA.</p>
+<p><img alt="Insert POU" src="/ooip-tutorial-library/private/images/TextLists/main.png" width="400" /></p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Clone and check out the project in the examples folder!</p>
 
